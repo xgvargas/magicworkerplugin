@@ -43,12 +43,12 @@ module.exports = class MagicWorker
 
             code = txt + compilation.assets[@ops.target].source().toString()
 
-            # code = UglifyJS.minify(code).code if @ops.minify
-            # if @ops.minify
-            #     console.log '----------minificando:'+code
-            #     console.log  UglifyJS.minify(code)
-            #     # code = UglifyJS.minify(code).code
-            #     console.log '=========minificado:'+code
+            code = UglifyJS.minify(code).code if @ops.minify
+            if @ops.minify
+                console.log '----------minificando:'+code
+                console.log  UglifyJS.minify(code)
+                # code = UglifyJS.minify(code).code
+                console.log '=========minificado:'+code
 
             compilation.assets[@ops.target] =
                 source: -> code

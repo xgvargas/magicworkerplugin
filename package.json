@@ -1,7 +1,7 @@
 {
-  "name": "magicworkerplugin",
+  "name": "magicworker",
   "version": "0.1.0",
-  "description": "Easy Service Worker and Web Worker with Webpack and VueJS",
+  "description": "Easy Service Worker and Web Worker",
   "scripts": {
     "prepublish": "npm run build",
     "build": "coffee -cbo lib src",
@@ -9,10 +9,6 @@
   },
   "author": "Gustavo Vargas <xgvargas@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "minimatch": "^3.0.4",
-    "uglify-js": "^3.0.18"
-  },
   "main": "./lib/plugin.js",
   "repository": {
     "type": "git",
@@ -22,5 +18,13 @@
     "url": "https://github.com/xgvargas/magicworkerplugin/issues"
   },
   "homepage": "https://github.com/xgvargas/magicworkerplugin#intro",
+  "dependencies": {
+    "glob": "^7.1.2",
+    "minimatch": "^3.0.4",
+    "uglify-js": "^3.2.2"
+  },
+  "devDependencies": {
+    "coffeescript": "1"
+  },
   "keywords": []
 }

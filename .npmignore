@@ -2,3 +2,4 @@
 coffeelint.json
 .editorconfig
 package-lock.json
+yarn-error.log

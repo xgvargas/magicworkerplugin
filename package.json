@@ -9,7 +9,6 @@
   },
   "author": "Gustavo Vargas <xgvargas@gmail.com>",
   "license": "MIT",
-  "main": "./lib/plugin.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:xgvargas/magicworkerplugin.git"
@@ -26,5 +25,5 @@
   "devDependencies": {
     "coffeescript": "1"
   },
-  "keywords": []
+  "keywords": ["webpack","plugin","service worker", "web worker", "vue"]
 }

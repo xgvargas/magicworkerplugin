@@ -16,7 +16,7 @@ module.exports = class MagicWorker
         }, ops
 
     apply: (compiler) ->
-        compiler.plugin 'emit', (compilation, cb) =>
+        compiler.hooks.emit.tap 'MagicWorkerPlugin', (compilation) =>
 
             txt =  "\nvar CACHE_VERSION = '#{new Date().toJSON().slice(0,16).replace(/\D/g, '')}';\n"
             txt += "\nvar OPTIONS = #{JSON.stringify(@ops.options).replace(/"(\w+)":/g, '$1:')};\n";
@@ -45,8 +45,7 @@ module.exports = class MagicWorker
 
             code = UglifyJS.minify(code).code if @ops.minify
 
-            compilation.assets[@ops.target] =
+            compilation.assets[@ops.target] = {
                 source: -> code
                 size: -> code.length
-
-            cb()
+            }
